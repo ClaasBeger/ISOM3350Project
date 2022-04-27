@@ -19,23 +19,25 @@ contract SimpleNFT {
     function mint(address _to, uint256 _tokenId) public returns (uint256) {
         require(exists[_tokenId] != true);
         ownerOf[_tokenId] = _to;
-        //
+        exists[_tokenId] = true
         return _tokenId;
     }
    
 
     function approveAddress(address _to, uint256 _tokenId) public returns (address){
-        //
+        require(ownerOf[_tokenId] == msg.sender);
         require(_to != address(0));
-        //
-        //
+        approvals[_tokenId] = _to;
+        return _to;
     }
    
    
     function transfer(address _to, uint256 _tokenId) public returns (uint256){
-        
+        //ONLY WITH SPECIAL APPROVAL
         require(msg.sender == ownerOf[_tokenId] || msg.sender == approvals[_tokenId]);
         require(_to != address(0));
+        ownerOf[_tokenId] = _to;
+        return _tokenId;
         //
         //
     }
