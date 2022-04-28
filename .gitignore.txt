@@ -1,4 +1,0 @@
-# Ignore files related to API keys
-Main/.env
-Main/node_modules
-
