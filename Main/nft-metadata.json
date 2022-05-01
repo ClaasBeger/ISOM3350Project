@@ -1,0 +1,27 @@
+{
+  "attributes": [
+    {
+      "trait_type": "IDD",
+      "value": "T22000129"
+    },
+    {
+      "trait_type": "Name/Surname/Nom",
+      "value": "MUSTERMANN GEB. GABLER"
+    },
+	{
+      "trait_type": "Vorname/Given names/Prenoms",
+      "value": "ERIKA"
+    },
+	{
+      "trait_type": "Geburtsort/Place of Birth/Lieu de naissance",
+      "value": "BERLIN"
+    },
+	{
+      "trait_type": "CAN",
+      "value": "938568"
+    }
+  ],
+  "description": "Smart Identity token for ERIKA MUSTERMANN. ",
+  "image": "ipfs://QmRoXNJwENDp1RQGbrvwJNiwXRDiDykkCdSfpu4qvaZT59",
+  "name": "SmartIdentity#1"
+}
