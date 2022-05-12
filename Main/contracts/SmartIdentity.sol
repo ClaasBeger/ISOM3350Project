@@ -12,6 +12,8 @@ contract SmartIdentity is ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 	address[] devs;
+    mapping(uint => string) public CIDMapping;
+
 
     constructor() ERC721("SmartIdentity", "ID") {
 	    devs[0] = 0x3Bb4404CCCf81156b692874AfFf7083CD7d73d32;
@@ -26,6 +28,8 @@ contract SmartIdentity is ERC721URIStorage, Ownable {
         uint256 newItemId = _tokenIds.current();
         _mint(recipient, newItemId);
         _setTokenURI(newItemId, tokenURI);
+        string memory CIDPlaceholder = "PlaceholderforCID";
+        CIDMapping[newItemId] = CIDPlaceholder;
 
         return newItemId;
     }
@@ -58,5 +62,28 @@ contract SmartIdentity is ERC721URIStorage, Ownable {
         require(checkDevs(), "Request an authorization from a developer if you have been granted develop privileges");
         devs[devs.length] = msg.sender;
         return true;
-}
+        }
+
+    /**
+     * @dev Returns the token collection name.
+     */
+    function name() public view override returns(string memory){
+        return "SmartIdentity";
+    }
+
+    /**
+     * @dev Returns the token collection symbol.
+     */
+    function symbol() public view override returns (string memory){
+        return "ID";
+    }
+
+    /**
+     * @dev Returns the Uniform Resource Identifier (URI) for `tokenId` token.
+     */
+    function tokenURI(uint256 tokenId) public view override returns (string memory){
+        //Should include the pinata link https://gateway.pinata.cloud/ipfs/<metadata-hash-code>
+        string memory cid = CIDMapping[tokenId];
+        return cid;
+    }
 }
