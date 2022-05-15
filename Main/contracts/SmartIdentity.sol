@@ -54,6 +54,7 @@ contract SmartIdentity is ERC721URIStorage, Ownable {
     function transferOwnership(address newOwner) public virtual override{
         require(newOwner != address(0), "Ownable: new owner is the zero address");
         require(checkDevs(), "Request a transfer from a developer if you are authorized");
+		_transferOwnership(newOwner);
     }
     
 	
