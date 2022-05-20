@@ -1,0 +1,53 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css";
+@import "https://fonts.googleapis.com/css?family=Inter:700,500";
+@import "https://px.animaapp.com/627f80f49102493ee8c76a6a.627f80f70764b1410c73c3e2.zhAfukG.rcp.png";
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+
+.container-center-horizontal {
+  pointer-events: none;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  display: flex;
+}
+
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --font-size-l: 16px;
+  --font-size-m: 12px;
+  --font-size-xl: 18px;
+  --font-family-inter: "Inter", Helvetica;
+}
+
+.idcard {
+  background-color: var(--black);
+  height: 332px;
+  width: 588px;
+  border-radius: 25px;
+  align-items: center;
+  gap: 36px;
+  padding: 24px;
+  display: flex;
+}
+
+.container-center-horizontal {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*# sourceMappingURL=index.e1b8c111.css.map */

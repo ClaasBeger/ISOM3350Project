@@ -1,0 +1,22 @@
+.idcard {
+  align-items: center;
+  background-color: var(--black);
+  display: flex;
+  gap: 36px;
+  height: 332px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
+  width: 588px;
+  border-radius: 25px;
+}
+
+.container-center-horizontal {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
